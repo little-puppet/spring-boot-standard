@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.105.43.250:3306/contract_print
+    username: root
+    password: rootadmin
+  application:
+    name: contract
+  profiles:
+    active: @spring.profiles.active@
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#server:
+#  port: 8084

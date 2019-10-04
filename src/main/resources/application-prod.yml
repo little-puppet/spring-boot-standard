@@ -1,0 +1,19 @@
+contract:
+  path:
+    contract: /root/file/contract/
+    template: /root/file/template/
+    employee: /root/file/employee/
+    file: /root/file/file/
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.17.0.1:3306/contract_print_prod
+    username: root
+    password: rootadmin
+##配置日志
+logging:
+  # 日志配置文件
+  config: classpath:logback-spring.xml
+  # 日志path路径配置
+  path: /root/logs

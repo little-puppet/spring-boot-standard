@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 配置日志按天生成文件 S -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Prudent>true</Prudent>
+        <rollingPolicy  class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/info-%d{yyyy-MM-dd}.log </FileNamePattern>
+            <MaxHistory>60</MaxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern> %d{yyyy-MM-dd HH:mm:ss} -%msg%n </Pattern>
+        </layout>
+    </appender>
+    <!-- 配置日志按天生成文件 E -->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] %logger{100}[%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.gome" level="INFO"/>
+    <logger name="com.standard" level="INFO"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="com.alibaba" level="INFO"/>
+    <logger name="com.alibaba.dubbo" level="INFO"/>
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springframework.test" level="INFO"/>
+    <logger name="org.springframework.boot" level="INFO"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="jdbc" level="WARN"/>
+    <logger name="jdbc.sqltiming" level="DEBUG"/>
+    <logger name="org.mybatis" level="WARN"/>
+    <logger name="org.spring.jdbc" level="WARN"/>
+
+    <!--
+     其中appender的配置表示打印到控制台(稍后详细讲解appender )；
+     <root level="INFO">将root的打印级别设置为“INFO”，指定了名字为“STDOUT”的appender。
+    -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

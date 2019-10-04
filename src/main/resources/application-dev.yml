@@ -1,0 +1,17 @@
+contract:
+  path:
+    contract: D:\file\contract\
+    template: D:\file\template\
+    employee: D:\file\employee\
+    file: D:\file\file\
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.105.43.250:3306/mybatis_test
+    #    url: jdbc:mysql://172.17.0.1:3306/contract_print_prod
+    username: root
+    password: rootadmin
+logging:
+  level:
+    web: DEBUG
